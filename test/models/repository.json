@@ -1,0 +1,26 @@
+{
+"total_count": 1,
+"incomplete_results": false,
+"items": [
+{
+"login": "aaronwiggins",
+"id": 11933367,
+"avatar_url": "https://avatars.githubusercontent.com/u/11933367?v=3",
+"gravatar_id": "",
+"url": "https://api.github.com/users/aaronwiggins",
+"html_url": "https://github.com/aaronwiggins",
+"followers_url": "https://api.github.com/users/aaronwiggins/followers",
+"following_url": "https://api.github.com/users/aaronwiggins/following{/other_user}",
+"gists_url": "https://api.github.com/users/aaronwiggins/gists{/gist_id}",
+"starred_url": "https://api.github.com/users/aaronwiggins/starred{/owner}{/repo}",
+"subscriptions_url": "https://api.github.com/users/aaronwiggins/subscriptions",
+"organizations_url": "https://api.github.com/users/aaronwiggins/orgs",
+"repos_url": "https://api.github.com/users/aaronwiggins/repos",
+"events_url": "https://api.github.com/users/aaronwiggins/events{/privacy}",
+"received_events_url": "https://api.github.com/users/aaronwiggins/received_events",
+"type": "User",
+"site_admin": false,
+"score": 28.07087
+}
+]
+}
