@@ -21,5 +21,47 @@ class RepositoryTest < ActiveSupport::TestCase
         "Week1-Day2-Method-Exercise"], repository.file_names
   end
 
+  test "find language for each repository" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal "Ruby", repository.languages.first
+  end
 
+  test "find stargazers for each repository" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal 0, repository.stargazers_count_per_repository.first
+  end
+
+  test "find forks for each repository" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal 0, repository.forks_count.first
+  end
+
+  test "find last update for each repository" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal "2015-05-14T04:16:37Z", repository.last_updates.first
+  end
+
+  test "get follwers link" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal "https://api.github.com/users/aaronwiggins/followers",
+    repository.followers_link
+  end
+
+  test "get following link" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal "https://api.github.com/users/aaronwiggins/following{/other_user}",
+    repository.following_link
+  end
+
+  test "get starred link" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal "https://api.github.com/users/aaronwiggins/starred{/owner}{/repo}",
+    repository.starred_link
+  end
+
+  test "get organizations link" do
+    repository = Repository.new("aaronwiggins")
+    assert_equal "https://api.github.com/users/aaronwiggins/orgs",
+    repository.organizations_link
+  end
 end
