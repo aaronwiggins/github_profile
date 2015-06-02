@@ -12,6 +12,10 @@ class Profile
     @page["email"]
   end
 
+  def photo_link
+    @page["avatar_url"]
+  end
+
   def get_data
     HTTParty.get("https://api.github.com/users/#{@name}?access_token=#{ENV["GIT_KEY"]}")
   end

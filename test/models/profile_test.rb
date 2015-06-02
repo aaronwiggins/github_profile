@@ -18,5 +18,8 @@ class ProfileTest < ActiveSupport::TestCase
     assert_equal "apw7177@gmail.com", profile.email
   end
 
-
+  test "get profile photo" do
+    profile = Profile.new("aaronwiggins")
+    assert_equal "https://avatars.githubusercontent.com/u/11933367?v=3", profile.photo_link
+  end
 end

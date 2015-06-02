@@ -8,6 +8,7 @@ class Repository
 end
 
 class RepositoryTest < ActiveSupport::TestCase
+
   test "mock github repository" do
     repository = Repository.new("aaronwiggins")
     assert_equal "aaronwiggins", repository.profile_name
@@ -64,4 +65,5 @@ class RepositoryTest < ActiveSupport::TestCase
     assert_equal "https://api.github.com/users/aaronwiggins/orgs",
     repository.organizations_link
   end
+  
 end

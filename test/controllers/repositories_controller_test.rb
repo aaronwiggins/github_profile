@@ -6,4 +6,8 @@ class RepositoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  # test "has content" do
+  #
+  # end
+
 end
