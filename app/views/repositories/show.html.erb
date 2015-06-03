@@ -1,7 +1,7 @@
 <div class="container">
-  ::before
+  <!-- ::before -->
   <div class="columns profilecols">
-    ::before
+    <!-- ::before -->
     <div class="column one-fourth vcard" itemscope itemtype:="http://schema.org/Person">
       <a href="<%= @profile.photo_link %>" aria-hidden="true" class="vcard-avatar" itemprop="image">
         <img alt class="avatar" height="230" src="<%= @profile.photo_link %>" width="230">
@@ -13,34 +13,34 @@
       <ul class="vcard-details">
         <li class="vcard-detail">
           <span class="octicon octicon-mail">
-            ::before
+            <!-- ::before -->
           </span>
           <a class="email" href="mailto:<%= @profile.email %>"><%= @profile.email %> </a>
         </li>
         <li class="vcard-detail" itemprop="worksFor" title="<%= @profile.company %>">
           <span class="octicon octicon-organization">
-            ::before
+            <!-- ::before -->
           </span>
           <%= @profile.company %>
         </li>
         <li class="vcard-detail" itemprop="homeLocation" title="<%= @profile.hometown %>">
           <span class="octicon octicon-location">
-            ::before
+            <!-- ::before -->
           </span>
           <%= @profile.hometown %>
         </li>
         <li class="vcard-detail">
           <span class="octicon-clock">
-            ::before
+            <!-- ::before -->
           <span>
-          <span class="join-label">Joined on </span>
+          <span class="join-label">Joined on</span>
           <time class="join-date" datetime="<%= @profile.date_created_raw %>"
                 day="numeric" is="local-time" month="short" year="numeric"
                 title="<% @profile.date_created_with_time %>"><%= @profile.date_created_pretty %></time>
         </li>
       </ul>
       <div class="vcard-stats">
-        ::before
+        <!-- ::before -->
         <a class="vcard-stat" href="<%= @profile.followers_link %>">
           <strong class="vcard-stat-count"><%= @profile.followers_count %></strong>
           <span class="text-muted">Followers</span>
@@ -49,7 +49,7 @@
           <strong class="vcard-stat-count"><%= @profile.following_count %></strong>
           <span class="text-muted">Following</span>
         </a>
-        ::after
+        <!-- ::after -->
       </div>
     </div>
     <div class="column three-fourths">
@@ -57,42 +57,80 @@
         <div class="right">
           <a href="https://github.com/account" class="btn btn-sm">
                   <span class="octicon octicon-pencil">
-                    ::before
+                    <!-- ::before -->
                   </span>
-                  "
-                                    Edit profile
-                                  "
+                  Edit profile
           </a>
         </div>
         <nav class="tabnav-tabs" data-pjax role="navigation">
         <a href="<% @profile.profile_page %>" class="tabnav-tab ">
           <span class="octicon octicon-diff-added">
-            ::before
+            <!-- ::before -->
           </span>
-          "
-                      Contributions
-                    "
+          Contributions
           </a>
           <a href="https://github.com/<%= @repositories.profile_name %>?tab=repositories" class="tabnav-tab selected">
             <span class="octicon octicon-repo">
-              ::before
+              <!-- ::before -->
             </span>
-            "
-                        Repositories
-                      "
+            Repositories"
           </a>
           <a href="http://github.com/<%= @repositories.profile_name %>?tab=activity" class="tabnav-tab ">
             <span class="octicon octicon-rss">
-              ::before
+              <!-- ::before -->
             </span>
-            "
-                        Public activity
-                      "
+            Public activity
           </a>
         </nav>
       </div>
       <div class="tab-content js-repo-filter">
         <div class="repo-tab">
           <div class="filter-bar">
+            <!-- ::before -->
+          <a href="https:github.com/new" class="btn btn-primary new-repo">
+            <span class="octicon oction-repo">
+              <!-- ::before -->
+            </span>
+            New
+          </a>
+          <ul class="repo_filterer">
+            <li>
+              <a href="<%= @profile.profile_page %>#" class="repo_filter js-repo-filter-tab"
+                    data-filter=".mirror">Mirrors</a>
+            </li>
+            <li>
+              <a href="<%= @profile.profile_page %>#" class="repo_filter js-repo-filter-tab"
+                    data-filter=".fork">Forks</a>
+            </li>
+            <li>
+              <a href="<%= @profile.profile_page %>#" class="repo_filter js-repo-filter-tab"
+                    data-filter=".source">Sources</a>
+            </li>
+            <li>
+              <a href="<%= @profile.profile_page %>#" class="repo_filter js-repo-filter-tab"
+                    data-filter=".private">Private</a>
+            </li>
+            <li>
+              <a href="<%= @profile.profile_page %>#" class="repo_filter js-repo-filter-tab"
+                    data-filter=".public">Public</a>
+            </li>
+            <li class="all_repos">
+              <a href="<%= @profile.profile_page %>#" class="repo_filter js-repo-filter-tab
+                    filter-selected" data-filter=".public, .private">All</a>
+            </li>
+          </ul>
+          <form accept-charset="UTF-8" action="/search" class="repo-search" method="get" role="search">
+            <div style="margin:0;padding:0;display:inline">
+              <input name="utf8" type="hidden" value="">
+            </div>
+            <input type="hidden" name="user" value="<%= @repositories.profile_name %>">
+            <input type="text" id="your-repos-filter" name="q"
+                class="filter_input js-filterable-field"
+                placeholder="Find a repository…" tabindex="2">
+            <input type="summit" value="Search" class="btn">
+          </form>
+          <!-- ::after -->
+        </div>
+
   </div>
 </div>

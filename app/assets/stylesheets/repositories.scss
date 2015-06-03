@@ -1,368 +1,513 @@
-// Place all the styles related to the Repositories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-* {
-  box-string: border-box;
-}
-
-#site-container>.container:first-child {
-  margin-top: 20px;
-}
-
-.container {
-  width: 980px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.container:before {
-  display: table;
-  content: "";
-}
-
-.columns {
-  margin-right: -10px;
-  margin-left: -10px;
-}
-
-.columns:before {
-  display: table;
-  content: "";
-}
-
-.one-fourth {
-  width: 25%;
-}
-
-.column {
-  float: left;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.repo-list-item {
-  position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  list-style: none;
-  border-bottom: 1px solid #eee;
-}
-
-.vcard-avatar {
-  position: relative;
-  display: block;
-}
-
-.vcard-avatar .avatar {
-  border-radius: 6px;
-}
-
-a {
-  color: #4078c0;
-  text-decoration: none;
-  background-color: transparent;
-}
-
-.vcard-names {
-  margin-top: 5px;
-  line-height: 1;
-}
-
-.vcard-fullname {
-  display: block;
-  overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  width: 100%;
-  font-size: 26px;
-  line-height: 30px;
-  text-overflow: ellipsis;
-}
-
-.vcard-username {
-  display: block;
-  overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  width: 100%;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 24px;
-  color: #666;
-  text-overflow: ellipsis;
-}
-
-.vcard-details {
-  list-style: none;
-    list-style-type: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-top: 1px solid #eee;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: rgb(238, 238, 238);
-}
-
-ul {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.vcard-detail {
-  width: 100%;
-  padding: 2px 0 2px 24px;
-    padding-top: 2px;
-    padding-right: 0px;
-    padding-bottom: 2px;
-    padding-left: 24px;
-  overflow-x: hidden;
-  white-space: nowrap;
-  font-size: 14px;
-  text-overflow: ellipsis;
-}
-
-.vcard-detail .octicon {
-  float: left;
-  width: 16px;
-  text-align: center;
-  margin-left: -24px;
-  color: #ccc;
-}
-
-.octicon, {
-  font: normal normal normal 16px/1 octicons;
-  font-family: octicons;
-  font-size: 16px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.octicon-mail:before {
-  content: '\f003';
-}
-
-.octicon-clock:before {
-  content: '\f046';
-}
-
-.octicon-location:before {
-  content: '\f060';
-}
-
-.vcard-stats {
-  margin-bottom: 10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-  border-top: 1px solid #eee;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: rgb(238, 238, 238);
-  border-bottom: 1px solid #eee;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(238, 238, 238);
-}
-
-div {
-  display: block;
-}
-
-.vcard-stats:before {
-  display: table;
-  content: "";
-}
-
-.vcard-stat {
-  float: left;
-  width: 33.333%;
-  font-size: 11px;
-  text-transform: capitalize;
-}
-
-.vcard-stat-count {
-  display: block;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.text-muted {
-  color: #767676;
-}
-
-.vcard-stats:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.three-fourths {
-  width: 75%;
-}
-
-.tabnav {
-  margin-top: 0;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(221, 221, 221);
-}
-
-.right {
-  float: right;
-}
-
-body {
-  word-wrap: break-word;
-}
-
-.btn .octicon {
-  vertical-align: text-top;
-}
-
-.octicon-pencil:before {
-  content: '\f058';
-}
-
-.btn-sm {
-  padding: 2px 10px;
-}
-
-.btn {
-  position: relative;
-  display: inline-block;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 20px;
-  color: #333;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  background-color: #eee;
-  background-image: -webkit-linear-gradient(#fcfcfc, #eee);
-  background-image: linear-gradient(#fcfcfc, #eee);
-  border: 1px solid #d5d5d5;
-  border-radius: 3px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-appearance: none;
-}
-
-.tabnav-tabs {
-  margin-bottom: -1px;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
-.octicon-diff-added:before {
-  content: '\f06b';
-}
-
-.octicon, .mega-octicon {
-  font: normal normal normal 16px/1 octicons;
-  font-family: octicons;
-  font-size: 16px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.tabnav-tab {
-  display: inline-block;
-  padding: 8px 12px;
-  padding-top: 8px;
-  padding-right: 12px;
-  padding-bottom: 8px;
-  padding-left: 12px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #666;
-  text-decoration: none;
-  border: 1px solid transparent;
-  border-top-color: transparent;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-right-color: transparent;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-bottom-color: initial;
-  border-bottom-style: initial;
-  border-bottom-width: 0px;
-  border-left-color: transparent;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-bottom: 0;
-}
-
-.tabnav-tab.selected {
-  color: #333;
-  background-color: #fff;
-  border-color: #ddd;
-  border-top-color: rgb(221, 221, 221);
-  border-right-color: rgb(221, 221, 221);
-  border-bottom-color: rgb(221, 221, 221);
-  border-left-color: rgb(221, 221, 221);
-  border-radius: 3px 3px 0 0;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
-
-.octicon-repo-delete:before, .octicon-repo:before {
-  content: '\f001';
-}
-
-.octicon-rss:before {
-  content: '\f034';
-}
-
-body.page-profile .tab-content {
-  position: relative;
-}
-
-.profilecols .filter-bar {
-  position: relative;
-  padding: 0 0 15px;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 15px;
-  padding-left: 0px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(221, 221, 221);
-}
+// // Place all the styles related to the Repositories controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+// * {
+//   box-string: border-box;
+// }
+//
+// #site-container>.container:first-child {
+//   margin-top: 20px;
+// }
+//
+// .container {
+//   width: 980px;
+//   margin-right: auto;
+//   margin-left: auto;
+// }
+//
+// .container:before {
+//   display: table;
+//   content: "";
+// }
+//
+// .columns {
+//   margin-right: -10px;
+//   margin-left: -10px;
+// }
+//
+// .columns:before {
+//   display: table;
+//   content: "";
+// }
+//
+// .one-fourth {
+//   width: 25%;
+// }
+//
+// .column {
+//   float: left;
+//   padding-right: 10px;
+//   padding-left: 10px;
+// }
+//
+// .repo-list-item {
+//   position: relative;
+//   padding-top: 30px;
+//   padding-bottom: 30px;
+//   list-style: none;
+//   border-bottom: 1px solid #eee;
+// }
+//
+// .vcard-avatar {
+//   position: relative;
+//   display: block;
+// }
+//
+// .vcard-avatar .avatar {
+//   border-radius: 6px;
+// }
+//
+// a {
+//   color: #4078c0;
+//   text-decoration: none;
+//   background-color: transparent;
+// }
+//
+// .vcard-names {
+//   margin-top: 5px;
+//   line-height: 1;
+// }
+//
+// .vcard-fullname {
+//   display: block;
+//   overflow: hidden;
+//     overflow-x: hidden;
+//     overflow-y: hidden;
+//   width: 100%;
+//   font-size: 26px;
+//   line-height: 30px;
+//   text-overflow: ellipsis;
+// }
+//
+// .vcard-username {
+//   display: block;
+//   overflow: hidden;
+//     overflow-x: hidden;
+//     overflow-y: hidden;
+//   width: 100%;
+//   font-size: 20px;
+//   font-style: normal;
+//   font-weight: 300;
+//   line-height: 24px;
+//   color: #666;
+//   text-overflow: ellipsis;
+// }
+//
+// .vcard-details {
+//   list-style: none;
+//     list-style-type: none;
+//   padding-top: 15px;
+//   padding-bottom: 15px;
+//   border-top: 1px solid #eee;
+//     border-top-width: 1px;
+//     border-top-style: solid;
+//     border-top-color: rgb(238, 238, 238);
+// }
+//
+// ul {
+//   padding: 0;
+//   margin-top: 0;
+//   margin-bottom: 0;
+// }
+//
+// .vcard-detail {
+//   width: 100%;
+//   padding: 2px 0 2px 24px;
+//     padding-top: 2px;
+//     padding-right: 0px;
+//     padding-bottom: 2px;
+//     padding-left: 24px;
+//   overflow-x: hidden;
+//   white-space: nowrap;
+//   font-size: 14px;
+//   text-overflow: ellipsis;
+// }
+//
+// .vcard-detail .octicon {
+//   float: left;
+//   width: 16px;
+//   text-align: center;
+//   margin-left: -24px;
+//   color: #ccc;
+// }
+//
+// .octicon, {
+//   font: normal normal normal 16px/1 octicons;
+//   font-family: octicons;
+//   font-size: 16px;
+//   font-style: normal;
+//   font-variant: normal;
+//   font-weight: normal;
+//   font-stretch: normal;
+//   line-height: 1;
+//   display: inline-block;
+//   text-decoration: none;
+//   text-rendering: auto;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+//
+// .octicon-mail:before {
+//   content: '\f003';
+// }
+//
+// .octicon-clock:before {
+//   content: '\f046';
+// }
+//
+// .octicon-location:before {
+//   content: '\f060';
+// }
+//
+// .vcard-stats {
+//   margin-bottom: 10px;
+//   padding-top: 15px;
+//   padding-bottom: 15px;
+//   text-align: center;
+//   border-top: 1px solid #eee;
+//     border-top-width: 1px;
+//     border-top-style: solid;
+//     border-top-color: rgb(238, 238, 238);
+//   border-bottom: 1px solid #eee;
+//     border-bottom-width: 1px;
+//     border-bottom-style: solid;
+//     border-bottom-color: rgb(238, 238, 238);
+// }
+//
+// div {
+//   display: block;
+// }
+//
+// .vcard-stats:before {
+//   display: table;
+//   content: "";
+// }
+//
+// .vcard-stat {
+//   float: left;
+//   width: 33.333%;
+//   font-size: 11px;
+//   text-transform: capitalize;
+// }
+//
+// .vcard-stat-count {
+//   display: block;
+//   font-size: 28px;
+//   font-weight: bold;
+//   line-height: 1;
+// }
+//
+// .text-muted {
+//   color: #767676;
+// }
+//
+// .vcard-stats:after {
+//   display: table;
+//   clear: both;
+//   content: "";
+// }
+//
+// .three-fourths {
+//   width: 75%;
+// }
+//
+// .tabnav {
+//   margin-top: 0;
+//   margin-bottom: 15px;
+//   border-bottom: 1px solid #ddd;
+//   border-bottom-width: 1px;
+//   border-bottom-style: solid;
+//   border-bottom-color: rgb(221, 221, 221);
+// }
+//
+// .right {
+//   float: right;
+// }
+//
+// body {
+//   word-wrap: break-word;
+// }
+//
+// .btn .octicon {
+//   vertical-align: text-top;
+// }
+//
+// .octicon-pencil:before {
+//   content: '\f058';
+// }
+//
+// .btn-sm {
+//   padding: 2px 10px;
+// }
+//
+// .btn {
+//   position: relative;
+//   display: inline-block;
+//   padding: 6px 12px;
+//   font-size: 13px;
+//   font-weight: bold;
+//   line-height: 20px;
+//   color: #333;
+//   white-space: nowrap;
+//   vertical-align: middle;
+//   cursor: pointer;
+//   background-color: #eee;
+//   background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+//   background-image: linear-gradient(#fcfcfc, #eee);
+//   border: 1px solid #d5d5d5;
+//   border-radius: 3px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   -webkit-appearance: none;
+// }
+//
+// .tabnav-tabs {
+//   margin-bottom: -1px;
+// }
+//
+// article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+//   display: block;
+// }
+//
+// .octicon-diff-added:before {
+//   content: '\f06b';
+// }
+//
+// .octicon, .mega-octicon {
+//   font: normal normal normal 16px/1 octicons;
+//   font-family: octicons;
+//   font-size: 16px;
+//   font-style: normal;
+//   font-variant: normal;
+//   font-weight: normal;
+//   font-stretch: normal;
+//   line-height: 1;
+//   display: inline-block;
+//   text-decoration: none;
+//   text-rendering: auto;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+//
+// .tabnav-tab {
+//   display: inline-block;
+//   padding: 8px 12px;
+//   padding-top: 8px;
+//   padding-right: 12px;
+//   padding-bottom: 8px;
+//   padding-left: 12px;
+//   font-size: 14px;
+//   line-height: 20px;
+//   color: #666;
+//   text-decoration: none;
+//   border: 1px solid transparent;
+//   border-top-color: transparent;
+//   border-top-style: solid;
+//   border-top-width: 1px;
+//   border-right-color: transparent;
+//   border-right-style: solid;
+//   border-right-width: 1px;
+//   border-bottom-color: initial;
+//   border-bottom-style: initial;
+//   border-bottom-width: 0px;
+//   border-left-color: transparent;
+//   border-left-style: solid;
+//   border-left-width: 1px;
+//   border-bottom: 0;
+// }
+//
+// .tabnav-tab.selected {
+//   color: #333;
+//   background-color: #fff;
+//   border-color: #ddd;
+//   border-top-color: rgb(221, 221, 221);
+//   border-right-color: rgb(221, 221, 221);
+//   border-bottom-color: rgb(221, 221, 221);
+//   border-left-color: rgb(221, 221, 221);
+//   border-radius: 3px 3px 0 0;
+//   border-top-left-radius: 3px;
+//   border-top-right-radius: 3px;
+//   border-bottom-right-radius: 0px;
+//   border-bottom-left-radius: 0px;
+// }
+//
+// .octicon-repo-delete:before, .octicon-repo:before {
+//   content: '\f001';
+// }
+//
+// .octicon-rss:before {
+//   content: '\f034';
+// }
+//
+// body.page-profile .tab-content {
+//   position: relative;
+// }
+//
+// .profilecols .filter-bar {
+//   position: relative;
+//   padding: 0 0 15px;
+//   padding-top: 0px;
+//   padding-right: 0px;
+//   padding-bottom: 15px;
+//   padding-left: 0px;
+//   background-color: #fff;
+//   border-bottom: 1px solid #ddd;
+//   border-bottom-width: 1px;
+//   border-bottom-style: solid;
+//   border-bottom-color: rgb(221, 221, 221);
+// }
+//
+// .filter-bar {
+//   padding: 10px;
+//   background-color: #fafafa;
+//   border-bottom: 1px solid #e5e5e5;
+// }
+//
+// .filter-bar:before {
+//   display: table;
+//   content: "";
+// }
+//
+// .profilecols .filter-bar .new-repo {
+//   float: right;
+//   margin-left: 15px;
+// }
+//
+// .octicon-repo-delete:before, .octicon-repo:before {
+//   content: '\f001';
+// }
+//
+// .profilecols .filter-bar .repo_filterer {
+//   float: right;
+//   margin-top: 8px;
+// }
+//
+// .profilecols .filter-bar li {
+//   position: relative;
+//   float: right;
+//   list-style: none;
+//   list-style-type: none;
+//   list-style-position: initial;
+//   list-style-image: initial;
+//   margin-left: 10px;
+//   font-size: 14px;
+// }
+//
+// .profilecols .filter-bar li a {
+//   display: inline-block;
+// }
+//
+// .profilecols .filter-bar li {
+//   position: relative;
+//   float: right;
+//   list-style: none;
+//   list-style-type: none;
+//   list-style-position: initial;
+//   list-style-image: initial;
+//   margin-left: 10px;
+//   font-size: 14px;
+// }
+//
+// .profilecols .filter-bar li .filter-selected {
+//   color: #000;
+//   font-weight: bold;
+// }
+//
+// .profilecols .repo-search {
+//   display: inline;
+// }
+//
+// form {
+//   display: block;
+//   margin-top: 0em;
+// }
+//
+// element.style {
+//   margin: 0;
+//   margin-top: 0px;
+//   margin-right: 0px;
+//   margin-bottom: 0px;
+//   margin-left: 0px;
+//   padding: 0;
+//   padding-top: 0px;
+//   padding-right: 0px;
+//   padding-bottom: 0px;
+//   padding-left: 0px;
+//   display: inline;
+// }
+//
+// input, select, textarea, button {
+//   font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+// }
+//
+// button, input, optgroup, select, textarea {
+//   color: inherit;
+//   font: inherit;
+//   margin: 0;
+// }
+//
+// input[type="hidden" i], input[type="image" i], input[type="file" i] {
+//   -webkit-appearance: initial;
+//   padding: initial;
+//   background-color: initial;
+//   border: initial;
+// }
+//
+// .form-control, input[type="text"], textarea {
+//   min-height: 34px;
+//   padding: 7px 8px;
+//   font-size: 13px;
+//   color: #333;
+//   vertical-align: middle;
+//   background-color: #fff;
+//   background-repeat: no-repeat;
+//   background-position: right center;
+//     background-position-x: 100%;
+//     background-position-y: 50%;
+//   border: 1px solid #ccc;
+//     border-top-color: rgb(204, 204, 204);
+//     border-top-style: solid;
+//     border-top-width: 1px;
+//   border-radius: 3px;
+//   outline: none;
+//   box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+// }
+//
+// .btn {
+//   position: relative;
+//   display: inline-block;
+//   padding: 6px 12px;
+//   font-size: 13px;
+//   font-weight: bold;
+//   line-height: 20px;
+//   color: #333;
+//   white-space: nowrap;
+//   vertical-align: middle;
+//   cursor: pointer;
+//   background-color: #eee;
+//   background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+//   background-image: linear-gradient(#fcfcfc, #eee);
+//   border: 1px solid #d5d5d5;
+//   border-radius: 3px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   -webkit-appearance: none;
+// }
+//
+// .filter-bar:after {
+//   display: table;
+//   clear: both;
+//   content: "";
+// }

@@ -38,5 +38,4 @@ class ProfileTest < ActiveSupport::TestCase
     assert_equal "April 13, 2015, 12:00 AM EDT", profile.date_created_with_time
   end
 
-
 end
