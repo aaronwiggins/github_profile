@@ -1,6 +1,6 @@
 <h1>GitHub Repository search</h1>
-<%= form_tag("repositories/show", method: "get") do %>
-  <label for="name">username:</label>
-  <%= text_field_tag "name", nil, placeholder: "username" %>
-  <span class="enterbutton"><%= submit_tag "enter" %></span>
-<% end %>
+  <%= form_tag("repositories/show", method: "post") do %>
+    <label for="name">username:</label>
+    <%= text_field_tag :name, nil, placeholder: "username" %>
+    <%= submit_tag "SEARCH" %>
+  <% end %>

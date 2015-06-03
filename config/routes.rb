@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'repositories/show'
+  post 'repositories/show'
   # get 'repositories/index'
   root 'repositories#index'
   # The priority is based upon order of creation: first created -> highest priority.

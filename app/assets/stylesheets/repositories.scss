@@ -1,3 +1,183 @@
 // Place all the styles related to the Repositories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-string: border-box;
+}
+
+.one-fourth {
+  width: 25%;
+}
+
+.column {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.repo-list-item {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+
+.vcard-avatar {
+  position: relative;
+  display: block;
+}
+
+a {
+  color: #4078c0;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.vcard-names {
+  margin-top: 5px;
+  line-height: 1;
+}
+
+.vcard-fullname {
+  display: block;
+  overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  width: 100%;
+  font-size: 26px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+}
+
+.vcard-username {
+  display: block;
+  overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  width: 100%;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: #666;
+  text-overflow: ellipsis;
+}
+
+.vcard-details {
+  list-style: none;
+    list-style-type: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #eee;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(238, 238, 238);
+}
+
+ul {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vcard-detail {
+  width: 100%;
+  padding: 2px 0 2px 24px;
+    padding-top: 2px;
+    padding-right: 0px;
+    padding-bottom: 2px;
+    padding-left: 24px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.vcard-detail .octicon {
+  float: left;
+  width: 16px;
+  text-align: center;
+  margin-left: -24px;
+  color: #ccc;
+}
+
+.octicon, {
+  font: normal normal normal 16px/1 octicons;
+  font-family: octicons;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.octicon-mail:before {
+  content: '\f003';
+}
+
+.octicon-clock:before {
+  content: '\f046';
+}
+
+.octicon-location:before {
+  content: '\f060';
+}
+
+.vcard-stats {
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-top: 1px solid #eee;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(238, 238, 238);
+  border-bottom: 1px solid #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 238, 238);
+}
+
+div {
+  display: block;
+}
+
+.vcard-stats:before {
+  display: table;
+  content: "";
+}
+
+.vcard-stat {
+  float: left;
+  width: 33.333%;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.vcard-stat-count {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.text-muted {
+  color: #767676;
+}
+
+.vcard-stats:after {
+  display: table;
+  clear: both;
+  content: "";
+}

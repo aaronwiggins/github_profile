@@ -1,10 +1,12 @@
 class RepositoriesController < ApplicationController
+  def index
+    @username = params[:name]
+  end
+
+
   def show
-    @repositories = Repository.new("aaronwiggins")
+    @repositories = Repository.new(params[:name])
     @profile = Profile.new(@repositories.profile_name)
   end
 
-  def index
-
-  end
 end

@@ -22,4 +22,21 @@ class ProfileTest < ActiveSupport::TestCase
     profile = Profile.new("aaronwiggins")
     assert_equal "https://avatars.githubusercontent.com/u/11933367?v=3", profile.photo_link
   end
+
+  test "get date profile created with all details" do
+    profile = Profile.new("aaronwiggins")
+    assert_equal "2015-04-13T23:10:21Z", profile.date_created_raw
+  end
+
+  test "get date profile created pretty" do
+    profile = Profile.new("aaronwiggins")
+    assert_equal "April 13, 2015", profile.date_created_pretty
+  end
+
+  test "get date profile created pretty with time" do
+    profile = Profile.new("aaronwiggins")
+    assert_equal "April 13, 2015, 12:00 AM EDT", profile.date_created_with_time
+  end
+
+
 end
