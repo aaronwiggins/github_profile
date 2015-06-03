@@ -1,50 +1,98 @@
-<div class="column one-fourth vcard" itemscope itemtype:="http://schema.org/Person">
-  <a href="<%= @profile.photo_link %>" aria-hidden="true" class="vcard-avatar" itemprop="image">
-    <img alt class="avatar" height="230" src="<%= @profile.photo_link %>" width="230">
-  </a>
-  <h1 class="vcard-names">
-    <span class="vcard-fullname" itemprop="name"><%= @profile.real_name %></span>
-    <span class="vcard-username" itemprop="additionalName"><%= @repositories.profile_name %></span>
-  </h1>
-  <ul class="vcard-details">
-    <li class="vcard-detail">
-      <span class="octicon octicon-mail">
-        <!-- ::before -->
-      </span>
-      <a class="email" href="mailto:<%= @profile.email %>"><%= @profile.email %> </a>
-    </li>
-    <li class="vcard-detail" itemprop="worksFor" title="<%= @profile.company %>">
-      <span class="octicon octicon-organization">
-        <!-- ::before -->
-      </span>
-      <%= @profile.company %>
-    </li>
-    <li class="vcard-detail" itemprop="homeLocation" title="<%= @profile.hometown %>">
-      <span class="octicon octicon-location">
-        <!-- ::before -->
-      </span>
-      <%= @profile.hometown %>
-    </li>
-    <li class="vcard-detail">
-      <span class="octicon-clock">
-        <!-- ::before -->
-      <span>
-      <span class="join-label">Joined on </span>
-      <time class="join-date" datetime="<%= @profile.date_created_raw %>"
-            day="numeric" is="local-time" month="short" year="numeric"
-            title="<% @profile.date_created_with_time %>"><%= @profile.date_created_pretty %></time>
-    </li>
-  </ul>
-  <div class="vcard-stats">
+<div class="container">
+  ::before
+  <div class="columns profilecols">
     ::before
-    <a class="vcard-stat" href="<%= @profile.followers_link %>">
-      <strong class="vcard-stat-count"><%= @profile.followers_count %></strong>
-      <span class="text-muted">Followers</span>
-    </a>
-    <a class="vcard-stat" href="<%= @profile.following_link %>">
-      <strong class="vcard-stat-count"><%= @profile.following_count %></strong>
-      <span class="text-muted">Following</span>
-    </a>
-    ::after
+    <div class="column one-fourth vcard" itemscope itemtype:="http://schema.org/Person">
+      <a href="<%= @profile.photo_link %>" aria-hidden="true" class="vcard-avatar" itemprop="image">
+        <img alt class="avatar" height="230" src="<%= @profile.photo_link %>" width="230">
+      </a>
+      <h1 class="vcard-names">
+        <span class="vcard-fullname" itemprop="name"><%= @profile.real_name %></span>
+        <span class="vcard-username" itemprop="additionalName"><%= @repositories.profile_name %></span>
+      </h1>
+      <ul class="vcard-details">
+        <li class="vcard-detail">
+          <span class="octicon octicon-mail">
+            ::before
+          </span>
+          <a class="email" href="mailto:<%= @profile.email %>"><%= @profile.email %> </a>
+        </li>
+        <li class="vcard-detail" itemprop="worksFor" title="<%= @profile.company %>">
+          <span class="octicon octicon-organization">
+            ::before
+          </span>
+          <%= @profile.company %>
+        </li>
+        <li class="vcard-detail" itemprop="homeLocation" title="<%= @profile.hometown %>">
+          <span class="octicon octicon-location">
+            ::before
+          </span>
+          <%= @profile.hometown %>
+        </li>
+        <li class="vcard-detail">
+          <span class="octicon-clock">
+            ::before
+          <span>
+          <span class="join-label">Joined on </span>
+          <time class="join-date" datetime="<%= @profile.date_created_raw %>"
+                day="numeric" is="local-time" month="short" year="numeric"
+                title="<% @profile.date_created_with_time %>"><%= @profile.date_created_pretty %></time>
+        </li>
+      </ul>
+      <div class="vcard-stats">
+        ::before
+        <a class="vcard-stat" href="<%= @profile.followers_link %>">
+          <strong class="vcard-stat-count"><%= @profile.followers_count %></strong>
+          <span class="text-muted">Followers</span>
+        </a>
+        <a class="vcard-stat" href="<%= @profile.following_link %>">
+          <strong class="vcard-stat-count"><%= @profile.following_count %></strong>
+          <span class="text-muted">Following</span>
+        </a>
+        ::after
+      </div>
+    </div>
+    <div class="column three-fourths">
+      <div class="tabnav">
+        <div class="right">
+          <a href="https://github.com/account" class="btn btn-sm">
+                  <span class="octicon octicon-pencil">
+                    ::before
+                  </span>
+                  "
+                                    Edit profile
+                                  "
+          </a>
+        </div>
+        <nav class="tabnav-tabs" data-pjax role="navigation">
+        <a href="<% @profile.profile_page %>" class="tabnav-tab ">
+          <span class="octicon octicon-diff-added">
+            ::before
+          </span>
+          "
+                      Contributions
+                    "
+          </a>
+          <a href="https://github.com/<%= @repositories.profile_name %>?tab=repositories" class="tabnav-tab selected">
+            <span class="octicon octicon-repo">
+              ::before
+            </span>
+            "
+                        Repositories
+                      "
+          </a>
+          <a href="http://github.com/<%= @repositories.profile_name %>?tab=activity" class="tabnav-tab ">
+            <span class="octicon octicon-rss">
+              ::before
+            </span>
+            "
+                        Public activity
+                      "
+          </a>
+        </nav>
+      </div>
+      <div class="tab-content js-repo-filter">
+        <div class="repo-tab">
+          <div class="filter-bar">
   </div>
 </div>

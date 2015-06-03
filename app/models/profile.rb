@@ -55,6 +55,10 @@ class Profile
     @page["following_url"]
   end
 
+  def profile_page
+    @page["html_url"]
+  end
+
   def get_data
     HTTParty.get("https://api.github.com/users/#{@name}?access_token=#{ENV["GIT_KEY"]}")
   end
